@@ -7,11 +7,12 @@ app.use(cookieParser());
 
 const username = 'stacy';
 
+
 app.get("/start", (req, res) => {
   const uid = req.query.id;
   if(uid === username) {
     console.log(uid);
-    res.cookie('user', 'stacy', { httpOnly: false});
+    res.cookie('user', 'stacy', { httpOnly: true});
   }
   res.send("Start Page");
 });
